@@ -8,7 +8,7 @@ OpsWorks puppetmaster) and hosted in a private subnet
 
 ## Files
 
-  - app.py   Chalice app file
+  - app.py   Chalice app fil
   - install.sh  shell script to copy files about FYI
   - policy-dev.json  AWS policies to set permissions.  Set your account #
   - requirements.txt  required external python modules
@@ -42,7 +42,8 @@ After this setup, login to the new Puppetmaster and use "puppet-access login" to
 Next, setup the Chalice part with the install.sh.  This should work on
 a vanilla Centos 7 server.  It will give a URL
 
-Then setup github.  Use the settings / webhook page from the project.  
+Then setup Github.  Use the settings / webhook page from the project that you will be using to host the repository for the Puppetmaster.  
+
 The payload URL is the chalice URL with the extra path "/hooky" on the end
 
 ## Set the secrets and url
