@@ -60,13 +60,6 @@ def deploy():
         good_hmac = hmac.compare_digest(sig, computed)
     else:
         app.log.debug("NO HMAC HEADER")
-    if (app.current_request.query_params is not None):
-        # assume that only only branch is being pushed and try to optimise
-        # to only pull this
-        ref = app.current_request.query_params['ref']
-        branch = ref.split('/')[-1]
-        whattoget = {'environments': [branch]}
-        app.log.debug("environment:%s" % branch)
     # good_hmac is True if github signature and locally generated are the same
     if (good_hmac):
         # timeout set by github is only 10 seconds, not enough to wait for
